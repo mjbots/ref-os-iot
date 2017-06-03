@@ -31,6 +31,7 @@ REF_OS_IMAGE_PKG_FEATURES += " \
      python3-extra \
      linux-firmware \
      wifi-hotspot \
+     mjmech-deps \
 "
 
 IMAGE_FEATURES += " \
@@ -45,4 +46,4 @@ LICENSE = "MIT"
 
 REF_OS_ROOTFS_SIZE = "3700"
 
-inherit refosiot-image
+inherit mjmechos-image

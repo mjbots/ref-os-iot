@@ -1,0 +1,3 @@
+gflags@mjmech
+snappy@mjmech
+log4cpp@openembedded-layer

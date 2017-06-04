@@ -2,3 +2,11 @@ gflags@mjmech
 snappy@mjmech
 log4cpp@openembedded-layer
 gstreamer1.0-rtsp-server@core
+ffmpeg@core
+gstreamer1.0-plugins-ugly@core
+lame@core
+liba52@core
+libid3tag@core
+mpeg2dec@core
+mpg123@core
+x264@core

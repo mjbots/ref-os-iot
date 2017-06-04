@@ -1,3 +1,4 @@
 gflags@mjmech
 snappy@mjmech
 log4cpp@openembedded-layer
+gstreamer1.0-rtsp-server@core

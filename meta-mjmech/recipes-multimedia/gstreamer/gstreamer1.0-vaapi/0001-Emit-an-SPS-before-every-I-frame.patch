@@ -1,0 +1,27 @@
+From 331b645c32acaa8445d21dd5ce3de1af30897f7b Mon Sep 17 00:00:00 2001
+From: Josh Pieper <jjp@pobox.com>
+Date: Mon, 12 Jun 2017 06:55:50 -0400
+Subject: [PATCH] Emit an SPS before every I-frame
+
+---
+ gst-libs/gst/vaapi/gstvaapiencoder_h264.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/gst-libs/gst/vaapi/gstvaapiencoder_h264.c b/gst-libs/gst/vaapi/gstvaapiencoder_h264.c
+index 49a7988..1d2bc52 100644
+--- a/gst-libs/gst/vaapi/gstvaapiencoder_h264.c
++++ b/gst-libs/gst/vaapi/gstvaapiencoder_h264.c
+@@ -2167,8 +2167,8 @@ ensure_sequence (GstVaapiEncoderH264 * encoder, GstVaapiEncPicture * picture)
+ {
+   GstVaapiEncSequence *sequence = NULL;
+ 
+-  /* submit an SPS header before every new I-frame, if codec config changed */
+-  if (!encoder->config_changed || picture->type != GST_VAAPI_PICTURE_TYPE_I)
++  /* submit an SPS header before every new I-frame */
++  if (picture->type != GST_VAAPI_PICTURE_TYPE_I)
+     return TRUE;
+ 
+   sequence = GST_VAAPI_ENC_SEQUENCE_NEW (H264, encoder);
+-- 
+2.7.4
+
